@@ -1,14 +1,14 @@
 {
   "name": "calculator-node",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "simple calculator that calculates",
+  "main": "app.js",
   "scripts": {
     "test": "jest",
     "build": "node app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "ali, mustafa",
   "license": "ISC",
   "dependencies": {
     "prompt-sync": "^4.2.0"

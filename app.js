@@ -6,8 +6,8 @@ console.log("\nCalculator written in Node.js\n\n");
 let firstNum = prompt("Enter first number: ");
 let secondNum = prompt("Enter second number: ");
 
-firstNum = parseInt(firstNum);
-secondNum = parseInt(secondNum);
+firstNum = parseFloat(firstNum);
+secondNum = parseFloat(secondNum);
 
 console.log("\n1 - Addition")
 console.log("2 - Subtraction")
@@ -39,7 +39,7 @@ switch (operation) {
         result = arithmetic.divide(firstNum, secondNum);
         console.log("\nDivision result: " + result);
         break;
-        
+
     default:
         console.log("\nInvalid operation");
 }
