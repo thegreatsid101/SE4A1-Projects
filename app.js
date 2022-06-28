@@ -22,17 +22,24 @@ let result;
 switch (operation) {
     case 1:
         result = arithmetic.add(firstNum, secondNum);
-        console.log("Addition result: " + result);
+        console.log("\nAddition result: " + result);
         break;
+
     case 2:
         result = arithmetic.sub(firstNum, secondNum);
-        console.log("Subtraction result: " + result);
+        console.log("\nSubtraction result: " + result);
+        break;
+
     case 3:
         result = arithmetic.multiply(firstNum, secondNum);
-        console.log("Multiplication result: " + result);
+        console.log("\nMultiplication result: " + result);
+        break;
+
     case 4:
         result = arithmetic.divide(firstNum, secondNum);
-        console.log("Division result: " + result);
+        console.log("\nDivision result: " + result);
+        break;
+        
     default:
-        console.log("Invalid operation");
+        console.log("\nInvalid operation");
 }
