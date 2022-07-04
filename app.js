@@ -17,7 +17,7 @@ for (let i = 0; i < 5; i++) {
 }
 
 console.log("Multiplication:")
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 6; i++) {
     let firstNum = Math.floor(Math.random() * 1000);
     let secondNum = Math.floor(Math.random() * 1000);
     console.log(arithmetic.multiply(firstNum, secondNum));
