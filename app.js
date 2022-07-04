@@ -4,7 +4,7 @@ console.log("\nCalculator written in Node.js\n\n");
 
 console.log("Addition:")
 for (let i = 0; i < 5; i++) {
-    let firstNum = Math.floor(Math.random() * 1000);
+    let firstNum = Math.floor(Math.random() * 5000);
     let secondNum = Math.floor(Math.random() * 1000);
     console.log(arithmetic.add(firstNum, secondNum));
 }
