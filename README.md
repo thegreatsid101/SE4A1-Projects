@@ -18,6 +18,7 @@ The common process of Jenkins involves the following 3 steps:
 
 - Java
 
+
 ### Installing Java
 
     sudo apt update
@@ -26,6 +27,30 @@ The common process of Jenkins involves the following 3 steps:
 ### Verifying Installation
 
     java -version
+    
+### Installing Jenkins
+
+The version of Jenkins included with the default Ubuntu packages is often behind the latest available version from the project itself. To ensure we have the latest fixes and features, we will use the project-maintained packages to install Jenkins.
+
+First, add the repository key to the system:
+
+    wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+
+After the key is added the system will return with OK.
+
+Next, append the Debian package repository address to sources.list which maintains all repositories:
+
+    sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+    
+After both commands have been entered, we’ll run update so that apt will use the new repository.
+
+    sudo apt update
+
+Finally, we’ll install Jenkins and its dependencies.
+
+    sudo apt install jenkins
+    
+
   
 
 ## Defining a Jenkins pipeline
