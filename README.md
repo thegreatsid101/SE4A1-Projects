@@ -32,17 +32,17 @@ The common process of Jenkins involves the following 3 steps:
 
 The version of Jenkins included with the default Ubuntu packages is often behind the latest available version from the project itself. To ensure we have the latest fixes and features, we will use the project-maintained packages to install Jenkins.
 
-First, add the repository key to the system:
+First, we will add the repository key to the system:
 
     wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
 
 After the key is added the system will return with OK.
 
-Next, append the Debian package repository address to sources.list which maintains all repositories:
+Next,we will append the Debian package repository address to sources.list which maintains all repositories:
 
     sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
     
-After both commands have been entered, we’ll run update so that apt will use the new repository.
+After both commands have been entered, we’ll run update so that apt will use the newly added repository.
 
     sudo apt update
 
@@ -52,7 +52,7 @@ Finally, we’ll install Jenkins and its dependencies.
     
 ### Starting Jenkins
 
-Let’s start Jenkins by using systemctl:
+Let’s start Jenkins by using **systemctl**:
 
     sudo systemctl start jenkins
 
@@ -72,8 +72,25 @@ If everything went well, the beginning of the status output shows that the servi
 
 Now that Jenkins is up and running, we need to adjust our firewall rules so that we can reach it from a web browser.
 
+### Opening Firewall
 
+By default, Jenkins runs on port 8080. We’ll open that port using **ufw**:
 
+    sudo ufw allow 8080
+    
+To check ufw’s status to confirm the new rules:
+
+    sudo ufw status
+    
+We can see that port **8080** is allowed:
+
+    ali@pop-os:~$ sudo ufw status
+    Status: active
+
+    To                         Action      From
+    --                         ------      ----
+    8080                       ALLOW       Anywhere                  
+    8080 (v6)                  ALLOW       Anywhere (v6)            
 
   
 
