@@ -28,7 +28,7 @@ The common process of Jenkins involves the following 3 steps:
 
     java -version
     
-### Installing Jenkins
+## Installing Jenkins
 
 The version of Jenkins included with the default Ubuntu packages is often behind the latest available version from the project itself. To ensure we have the latest fixes and features, we will use the project-maintained packages to install Jenkins.
 
