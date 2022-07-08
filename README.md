@@ -27,10 +27,18 @@ The common process of Jenkins involves the following 3 steps:
 ### Verifying Installation
 
     java -version
+
+As we can Java 11 was installed successfully: 
+
+    ali@pop-os:~$ java -version
+    openjdk version "11.0.15" 2022-04-19
+    OpenJDK Runtime Environment (build 11.0.15+10-Ubuntu-0ubuntu0.22.04.1)
+    OpenJDK 64-Bit Server VM (build 11.0.15+10-Ubuntu-0ubuntu0.22.04.1, mixed mode, sharing)
+
     
 ## Installing Jenkins
 
-The version of Jenkins included with the default Ubuntu packages is often behind the latest available version from the project itself. To ensure we have the latest fixes and features, we will use the project-maintained packages to install Jenkins.
+The version of Jenkins included with the default Ubuntu packages is often outdated. To ensure we have the latest fixes and features, we will use the project-maintained packages to install Jenkins.
 
 First, we will add the repository key to the system:
 
@@ -92,6 +100,52 @@ We can see that port **8080** is allowed:
     8080                       ALLOW       Anywhere                  
     8080 (v6)                  ALLOW       Anywhere (v6)            
 
-  
 
-## Defining a Jenkins pipeline
+## Setting up Jenkins
+
+
+To set up  installation, we will visit Jenkins on its default port i.e. 8080, using server IP address: http://localhost:8080
+
+We will receive the Unlock Jenkins screen, which displays the location of the initial password:
+
+![Jenkins unlock screen](/steps/11.png)
+
+In the terminal window, we will use the **cat** command to display the password:
+
+    sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+    
+We will copy the password from the terminal and paste it into the Administrator password field, then click Continue.
+
+The next screen show us the option of installing suggested plugins or selecting specific plugins:
+
+![installation method selection](/steps/13.png)
+
+We’ll click the Install suggested plugins option, which will immediately begin the installation process.
+
+![installation begin](/steps/14.png)
+
+When the installation is complete, we'll be prompted to set up the first administrative user. Or we can use the default admin user
+
+![user selection](/steps/15.png)
+
+We will setup our own user and enter the name and password for our user:
+
+![user selection](/steps/16.png)
+
+We’ll receive an Instance Configuration page that will ask us to confirm the preferred URL for our Jenkins instance. We will confirm it as this is the URL we want.
+
+![Instance cofiguration](/steps/17.png)
+
+After confirming, click Save and Finish. We’ll receive a confirmation page confirming that **“Jenkins is Ready!”**:
+
+![Jenkins ready](/steps/18.png)
+
+Click Start using Jenkins to visit the main Jenkins dashboard:
+
+![Jenkins Dashboard](/steps/19.png)
+
+At this point, we have completed installation of Jenkins.
+
+
+## Defining Jenkis Pipeline
+
