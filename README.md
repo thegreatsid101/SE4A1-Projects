@@ -147,5 +147,52 @@ Click Start using Jenkins to visit the main Jenkins dashboard:
 At this point, we have completed installation of Jenkins.
 
 
-## Defining Jenkis Pipeline
+## Defining Jenkins Pipeline
+
+
+To create a Jenkins job and create a pipeline we will click on **"Create a job"**
+
+![Jenkins Dashboard](/steps/21.png)
+
+Next we will enter the name of the Job. We will call it **"Node Calculator”**. 
+Then we will select Freestyle project and finally click **Ok**.
+
+![Jenkins Freestyle project](/steps/22.png)
+
+Next we will enter the description of our Job and enter the github url of our project.
+
+![Job details](/steps/24.png)
+
+Then under Source Code Management tab, We will enter our repository URL i.e. https://github.com/alifaroo-q/SE4A1-Projects.git <br>
+And enter our Branches to build i.e. **/JenkinProject**
+
+![Repo details](/steps/25.png)
+
+Next under Build Trigger tab, We will select **Github hook trigger for GITSCM polling**
+
+![github hook](/steps/26.png)
+
+Next under Build tab, we will click on **“Add build step”** <br>
+Then click on “Execute Windows batch command” and add the commands
+
+    npm install
+    npm run build
+    npm test
+
+![build details](/steps/27.png)
+
+Then click on **"Apply"** and then **"Save"**
+
+
+
+
+
+
+
+
+
+
+
+
+
 
