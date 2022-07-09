@@ -212,7 +212,13 @@ It means that our pipeline ran successfully as it builded and tested our github 
 In sum, we have executed our project hosted on GitHub. Jenkin pulls the code from the remote repository and builds continuously each time we commit on our repository.
 
 
+## Conclusion
 
+We have successfully installed Jenkins and all of it's dependencies and successfully configured it. After that we created a simple calculator that was written on JavaScript with NodeJS and created Testcases for it. Finally we created CI/CD pipeline on Jenkins for our calculator and successfully builded and tested it.
+
+<br>
+
+> This pipeline will only run when we explicitly click on **Build Now** in our pipeline. To make it run automatically on every commit that is made on our github repository, we will have to host our Jenkins server on dedicated machine or some cloud hosted service like **Amazon Web Services (AWS)** and add IP Address of that server in our Github reposity as WebHook, so that Github can notify our Jenkins server everytime a new commit is made.
 
 
 
