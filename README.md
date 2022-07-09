@@ -184,6 +184,38 @@ Then click on “Execute shell” and add the following commands (we are using n
 Then click on **"Apply"** and then **"Save"**
 
 
+Now that we have created the pipeline as well connected it to our github repository and defined building & testing steps, we now will trigger the build process.
+
+## Jenkins Build Process
+
+In the main dashboard screen, Click the **Build Now** button on the left-hand side to build the source code from github repository.
+
+![Build Now](/steps/29.png)
+
+After clicking on Build now, we can see the status of the build we run under **Build History**.
+
+![Build status](/steps/30.png)
+
+Click on the build number i.e. **#1** to view the status of build that we ran.
+
+![Build status for #1](/steps/31.png)
+
+Click on **Console Output** on the left-hand side to see the status of the build we run.
+
+![Console output](/steps/32.png)
+
+Finaly we can see **Finished: SUCCESS** <br> 
+It means that our pipeline ran successfully as it builded and tested our github project without any error
+
+![Finished](/steps/34.png)
+
+In sum, we have executed our project hosted on GitHub. Jenkin pulls the code from the remote repository and builds continuously each time we commit on our repository.
+
+
+
+
+
+
 
 
 
