@@ -28,7 +28,7 @@ The common process of Jenkins involves the following 3 steps:
 
     java -version
 
-As we can Java 11 was installed successfully: 
+As we can see Java 11 was installed successfully: 
 
     ali@pop-os:~$ java -version
     openjdk version "11.0.15" 2022-04-19
@@ -46,15 +46,15 @@ First, we will add the repository key to the system:
 
 After the key is added the system will return with OK.
 
-Next,we will append the Debian package repository address to sources.list which maintains all repositories:
+Next, we will add the Debian package repository address to sources.list which maintains all repositories:
 
     sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
     
-After both commands have been entered, we’ll run update so that apt will use the newly added repository.
+After both commands have been entered, we’ll run update so that apt will use the newly added repository:
 
     sudo apt update
 
-Finally, we’ll install Jenkins and its dependencies.
+Finally, we’ll install Jenkins and its dependencies:
 
     sudo apt install jenkins
     
@@ -64,7 +64,7 @@ Let’s start Jenkins by using **systemctl**:
 
     sudo systemctl start jenkins
 
-Since systemctl doesn’t display status output, we’ll use the status command to verify that Jenkins started successfully:
+Since **systemctl** doesn’t display status output, we’ll use the status command to verify that Jenkins started successfully:
 
     sudo systemctl status jenkins
 
@@ -78,11 +78,11 @@ If everything went well, the beginning of the status output shows that the servi
      Memory: 614.0M
         CPU: 36.170s
 
-Now that Jenkins is up and running, we need to adjust our firewall rules so that we can reach it from a web browser.
+Now that Jenkins is up and running, we need to adjust our firewall rules so that we can access it from a web browser
 
 ### Opening Firewall
 
-By default, Jenkins runs on port 8080. We’ll open that port using **ufw**:
+By default, Jenkins runs on port 8080. We’ll open this port using **ufw**:
 
     sudo ufw allow 8080
     
@@ -104,7 +104,7 @@ We can see that port **8080** is allowed:
 ## Setting up Jenkins
 
 
-To set up  installation, we will visit Jenkins on its default port i.e. 8080, using server IP address: http://localhost:8080
+To set up  installation, we will visit Jenkins on its default port i.e. 8080, using server IP address (in our case it is localhost): http://localhost:8080
 
 We will receive the Unlock Jenkins screen, which displays the location of the initial password:
 
@@ -128,11 +128,11 @@ When the installation is complete, we'll be prompted to set up the first adminis
 
 ![user selection](/steps/15.png)
 
-We will setup our own user and enter the name and password for our user:
+We will setup our user i.e. we will enter the name and password for our user:
 
 ![user selection](/steps/16.png)
 
-We’ll receive an Instance Configuration page that will ask us to confirm the preferred URL for our Jenkins instance. We will confirm it as this is the URL we want.
+We’ll receive an Instance Configuration page that will ask us to confirm the preferred URL for our Jenkins instance. We will proceed with this as this is the URL we want.
 
 ![Instance cofiguration](/steps/17.png)
 
@@ -168,12 +168,12 @@ And enter our Branches to build i.e. **/JenkinProject**
 
 ![Repo details](/steps/25.png)
 
-Next under Build Trigger tab, We will select **Github hook trigger for GITSCM polling**
+Next under Build Trigger tab, We will check the **Github hook trigger for GITSCM polling** box
 
 ![github hook](/steps/26.png)
 
 Next under Build tab, we will click on **“Add build step”** <br>
-Then click on “Execute Windows batch command” and add the commands
+Then click on “Execute shell” and add the following commands (we are using npm because this is a nodejs project)
 
     npm install
     npm run build
