@@ -1,0 +1,16 @@
+{
+  "name": "calculator-node",
+  "version": "1.0.0",
+  "description": "simple calculator that calculates",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "build": "node app.js"
+  },
+  "keywords": [],
+  "author": "ali, mustafa",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.1"
+  }
+}
